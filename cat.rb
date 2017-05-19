@@ -10,7 +10,7 @@ class Cat
     if @meal_time < 12
       "#{@meal_time}AM"
     else
-      "#{@meal_time}PM"
+      "#{@meal_time-12}PM"
     end
   end
 
@@ -24,3 +24,5 @@ abby = Cat.new("Abby", "hard food", 10)
 felix = Cat.new("Felix", "hard food", 17)
 
 abby.meow
+
+felix.meow
