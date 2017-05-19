@@ -7,15 +7,18 @@ class Cat
   end
 
   def eats_at
-    if meal_time < 12
-      puts "#{meal_time}AM"
+    if @meal_time < 12
+      "#{@meal_time}AM"
     else
-      puts "#{meal_time}PM"
+      "#{@meal_time}PM"
     end
   end
 
+  def meow
+    p "My name is #{@name} and I eat #{@preferred_food} at #{eats_at}."
+  end
 end
 
-abby = Cat.new("Abby", "hard", 10)
+abby = Cat.new("Abby", "hard food", 10)
 
-felix = Cat.new("Felix", "hard", 17)
+felix = Cat.new("Felix", "hard food", 17)
