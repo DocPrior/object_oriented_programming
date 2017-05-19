@@ -22,3 +22,5 @@ end
 abby = Cat.new("Abby", "hard food", 10)
 
 felix = Cat.new("Felix", "hard food", 17)
+
+abby.meow
