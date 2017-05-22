@@ -14,16 +14,16 @@ class Paperboy
   end
 
   def deliver(start_address, end_address)
-    @earnings += (end_address - start_address) * 0.25
+    @earnings += (end_address - start_address).abs * 0.25
 
-    @experience += end_address - start_address
+    @experience += (end_address - start_address).abs
 
-    if (end_address - start_address) < quota
+    if (end_address - start_address).abs < quota
       @earnings -= 2.00
     end
 
-    if (end_address - start_address) > quota
-      @earnings += (end_address - start_address - quota) * 0.5
+    if (end_address - start_address).abs > quota
+      @earnings += ((end_address - start_address).abs - quota) * 0.5
     end
   end
 
@@ -45,6 +45,14 @@ tommy.report
 tommy.quota
 
 tommy.deliver(50, 102)
+
+tommy.earnings
+
+tommy.report
+
+tommy.quota
+
+tommy.deliver(150, 10)
 
 tommy.earnings
 
