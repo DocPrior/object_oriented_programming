@@ -18,11 +18,11 @@ class Paperboy
 
     @experience += end_address - start_address
 
-    if end_address - start_address < quota
+    if (end_address - start_address) < quota
       @earnings -= 2.00
     end
 
-    if end_address - start_address > quota
+    if (end_address - start_address) > quota
       @earnings += (end_address - start_address - quota) * 0.5
     end
   end
